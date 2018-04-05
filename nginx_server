@@ -1,0 +1,36 @@
+###############################################################################
+#######################           DOCKER         ##############################
+###############################################################################
+
+
+## upload the container of nginx
+$ docker run -d -P --name web nginx
+
+## getting the port
+$ docker port web
+
+
+## shall  to create the docker-machine... not sure what is this
+$ docker-machine create default
+
+
+## this allow me to have an ip address
+$ docker-machine ip default
+
+
+## Feed the 'ip':'port' in the address box of the browser, and should get the page
+
+
+## Making the website with own content ----------------------------------------
+$ cd $HOME
+$ mkdir mysite
+$ echo "Some stuff" < index.html
+
+## long sentence
+$ docker run -d -P -v $HOME/mysite:/usr/share/nginx/html \
+> --name mysite nginx
+
+## Obtain the port
+$ docker port mysite
+
+## and voila, you have your website... let see if works for me
