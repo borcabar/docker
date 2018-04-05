@@ -34,3 +34,9 @@ $ docker run -d -P -v $HOME/mysite:/usr/share/nginx/html \
 $ docker port mysite
 
 ## and voila, you have your website... let see if works for me
+
+##ok, things happens in a way different from what i expected... the ip adress was
+0.0.0.0:32771
+
+:O
+
